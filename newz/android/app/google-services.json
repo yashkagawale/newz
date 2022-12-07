@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "571238416970",
+    "project_id": "firebse-auth-96ef0",
+    "storage_bucket": "firebse-auth-96ef0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571238416970:android:19474976b95a1409b95cb3",
+        "android_client_info": {
+          "package_name": "com.newz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571238416970-8g3s1gc8683mqb4gvl41f17nlc148mil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDooJEmkk_dQzJfzSIgMRrfHquSwzp6dGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571238416970-8g3s1gc8683mqb4gvl41f17nlc148mil.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
