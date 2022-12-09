@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
 import {windowHeight, windowWidth} from '../utils/Dimentions';
+import { AuthContext } from '../navigation/AuthProvider';
 
 
 
@@ -13,6 +14,7 @@ const SignupScreen = ({navigation}) => {
     const [password, setPassword] = useState();
     const [confirmpassword, setConfirmPassword] = useState();
 
+    const {register} = useContext(AuthContext)
 
     return (
         <View style={styles.container}>
@@ -45,7 +47,7 @@ const SignupScreen = ({navigation}) => {
 
             <FormButton 
                 buttonTitle="Sign Up"
-                onPress={() => alert('Sign up Clicked')}
+                onPress={() => register(email, password)}
             />
 
             <View style={styles.textPrivate}>
