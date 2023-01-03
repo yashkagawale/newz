@@ -20,61 +20,62 @@ const Dots = ({selected}) => {
     );
 }
 
-const Skip = ({...props}) => (
-    <TouchableOpacity
-        style={{marginHorizontal:10}}
-        {...props}
-    >
-        <Text style={{fontSize:16}}>Skip</Text>
-    </TouchableOpacity>
-);
+// const Skip = ({...props}) => (
+//     <TouchableOpacity
+//         style={{marginHorizontal:10}}
+//         {...props}
+//     >
+//         <Text style={{fontSize:16}}>Skip</Text>
+//     </TouchableOpacity>
+// );
 
-const Next = ({...props}) => (
-    <TouchableOpacity
-        style={{marginHorizontal:10}}
-        {...props}
-    >
-        <Text style={{fontSize:16}}>Next</Text>
-    </TouchableOpacity>
-);
+// const Next = ({...props}) => (
+//     <TouchableOpacity
+//         style={{marginHorizontal:10}}
+//         {...props}
+//     >
+//         <Text style={{fontSize:16}}>Next</Text>
+//     </TouchableOpacity>
+// );
 
 const Done = ({...props}) => (
     <TouchableOpacity
         style={{marginHorizontal:10}}
         {...props}
     >
-        <Text style={{fontSize:16}}>Done</Text>
+        <Text style={{fontSize:16, color:'white'}}>Done</Text>
     </TouchableOpacity>
 );
 
 const OnboardingScreen = ({navigation}) => {
     return (
         <Onboarding
-        SkipButtonComponent={Skip}
-        NextButtonComponent={Next}
+        // SkipButtonComponent={Skip}
+        // NextButtonComponent={Next}
         DoneButtonComponent={Done}
-        DotComponent={Dots}
-        onSkip={() => navigation.replace("Login")}
-        onDone={() => navigation.replace("Login")}
+        // DotComponent={Dots}
+        onSkip={() => navigation.navigate("Login")}
+        onDone={() => navigation.navigate("Login")}
         pages={[
           {
-            backgroundColor: '#a6e4d0',
-            image: <Image source={require('../assets/onboarding-img1.png')} />,
+            
+            backgroundColor: 'black',
+            image: <Image style={styles.fit} source={require('../assets/newz_3_1.png')} />,
             title: 'Connect to the World',
             subtitle: 'A New Way To Connect With The World',
           },
           {
-            backgroundColor: '#fdeb93',
-            image: <Image source={require('../assets/onboarding-img2.png')} />,
+            backgroundColor: 'black',
+            image: <Image style={styles.fit} source={require('../assets/slide_1.png')} />,
             title: 'Share Your Favorites',
             subtitle: 'Share Your Thoughts With Similar Kind of People',
           },
-          {
-            backgroundColor: '#e9bcbe',
-            image: <Image source={require('../assets/onboarding-img3.png')} />,
-            title: 'Become The Star',
-            subtitle: "Let The Spot Light Capture You",
-          },
+        //   {
+        //     backgroundColor: 'black',
+        //     image: <Image source={require('../assets/onboarding-img3.png')} />,
+        //     title: 'Become The Star',
+        //     subtitle: "Let The Spot Light Capture You",
+        //   },
         ]}
       />
     );
@@ -88,4 +89,8 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center'
   },
+  fit: {
+    height: 900,
+    width: 500
+  }
 });

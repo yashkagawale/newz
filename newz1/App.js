@@ -7,3 +7,6 @@ const App = () => {
 }
 
 export default App;
+
+// world news at your finger tips
+

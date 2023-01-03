@@ -7,6 +7,7 @@ import OnboardingScreen from '../screens/OnboardingScreen';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import HomeScreen from '../screens/HomeScreens';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,11 @@ const AuthStack = () => {
       <Stack.Screen
         name="Login"
         component={LoginScreen}
+        options={{header: () => null}}
+      />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
         options={{header: () => null}}
       />
       <Stack.Screen
