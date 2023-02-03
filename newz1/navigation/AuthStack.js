@@ -1,13 +1,21 @@
-import React, {useState, useEffect} from 'react';
-import {View} from 'react-native';
-import {createStackNavigator} from '@react-navigation/stack';
+import React, { useState, useEffect } from 'react';
+import { View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 import SignupScreen from '../screens/SignupScreen';
 import LoginScreen from '../screens/LoginScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import HomeScreen from '../screens/HomeScreens';
+import ForgetPasswordScreen from '../screens/ForgotPasswordScreen';
+import NewPasswordScreen from '../screens/NewPasswordScreen';
+import ConfirmEmailScreen from '../screens/ConfirmEmailScreen';
+import Iconscreen from '../components/Icon';
+import India from '../screens/Country/India';
+
 
 const Stack = createStackNavigator();
 
@@ -24,7 +32,7 @@ const AuthStack = () => {
         setIsFirstLaunch(false);
       }
     }); // Add some error handling, also you can simply do setIsFirstLaunch(null)
-  
+
   }, []);
 
   if (isFirstLaunch === null) {
@@ -36,34 +44,31 @@ const AuthStack = () => {
   }
 
   return (
+    // <NavigationContainer>
+
     <Stack.Navigator initialRouteName={routeName}>
       <Stack.Screen
         name="Onboarding"
         component={OnboardingScreen}
-        options={{header: () => null}}
+        options={{ header: () => null }}
       />
       <Stack.Screen
         name="Login"
         component={LoginScreen}
-        options={{header: () => null}}
-      />
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{header: () => null}}
+        options={{ header: () => null }}
       />
       <Stack.Screen
         name="Signup"
         component={SignupScreen}
-        options={({navigation}) => ({
-          title:'',
+        options={({ navigation }) => ({
+          title: '',
           headerStyle: {
             backgroundColor: '#f9fafd',
             shadowColor: '#f9fafd',
             elevation: 0,
           },
           headerLeft: () => (
-            <View style={{marginLeft: 10}}>
+            <View style={{ marginLeft: 10 }}>
               <FontAwesome.Button
                 name="long-arrow-left"
                 size={25}
@@ -75,7 +80,28 @@ const AuthStack = () => {
           ),
         })}
       />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ header: () => null }}
+      />
+      <Stack.Screen
+        name="ForgetPassword"
+        component={ForgetPasswordScreen}
+        options={{ header: () => null }}
+      />
+      <Stack.Screen
+        name="NewPassword"
+        component={NewPasswordScreen}
+        options={{ header: () => null }}
+      />
+      <Stack.Screen
+        name="ConfirmEmail"
+        component={ConfirmEmailScreen}
+        options={{ header: () => null }}
+      />
     </Stack.Navigator>
+    // </NavigationContainer>
   );
 };
 

@@ -1,7 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
-import { NavigationContainer } from "@react-navigation/native";
+// import { NavigationContainer } from "@react-navigation/native";
 // import {AuthContext} from './AuthProvider'
 // import auth from '@react-native-firebase/auth' 
+import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import SearchScreen from "../screens/SearchScreen"
+// import { Entypo, FontAwesome } from '@expo/vector-icons'
+// import HomeScreen from "../screens/HomeScreens";
 
 
 import AuthStack from "./AuthStack";
@@ -35,7 +40,7 @@ import AuthStack from "./AuthStack";
 const Routes = () => {
     return (
         <NavigationContainer>
-            <AuthStack/>
+            <AuthStack />
         </NavigationContainer>
     );
 };

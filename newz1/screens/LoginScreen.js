@@ -6,73 +6,87 @@ import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
 import { windowHeight, windowWidth } from '../utils/Dimentions';
 import { useFonts } from 'expo-font';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
 const LoginScreen = ({ navigation }) => {
+  const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('../assets/rn-social-logo.png')}
-        style={styles.logo}
-      />
-      <Text style={styles.text}>Newz</Text>
-      <FormInput
-        labelValue={email}
-        onChangeText={(userEmail) => setEmail(userEmail)}
-        placeholderText="Email"
-        iconType="user"
-        keyboardType="email-address"
-        autoCapitalize="none"
-        autoCorrect={false}
-      />
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.container}>
+        <Image
+          source={require('../assets/rn-social-logo.png')}
+          style={styles.logo}
+        />
+        <Text style={styles.text}>Newz</Text>
+        <FormInput
+          labelValue={username}
+          onChangeText={(username) => setEmail()}
+          placeholderText="Username"
+          iconType="user"
+          // keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
 
-      <FormInput
-        labelValue={password}
-        onChangeText={(userPassword) => setPassword(userPassword)}
-        placeholderText="Password"
-        iconType="lock"
-        secureTextEntry={true}
-      />
+        {/* <FormInput
+          labelValue={email}
+          onChangeText={(userEmail) => setEmail(userEmail)}
+          placeholderText="Email"
+          iconType="user"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+        /> */}
 
-      <FormButton
-        buttonTitle="Sign In"
-        onPress={() => alert('Sign In Clicked')}
-      />
+        <FormInput
+          labelValue={password}
+          onChangeText={(userPassword) => setPassword(userPassword)}
+          placeholderText="Password"
+          iconType="lock"
+          secureTextEntry={true}
+        />
 
-      <TouchableOpacity style={styles.forgotButton} onPress={() => { }}>
-        <Text style={styles.navButton}>Forogot Password?</Text>
-      </TouchableOpacity>
+        <FormButton
+          buttonTitle="Sign In"
+          onPress={() => alert('Sign In Clicked')}
+        />
 
-      {Platform.OS == 'android' ? (
-        <View>
+        <TouchableOpacity style={styles.forgotButton} onPress={() => navigation.navigate('ForgetPassword')}>
+          <Text style={styles.navButton}>Forgot Password?</Text>
+        </TouchableOpacity>
 
-          <SocialButton
-            buttonTitle="Sign In with Facebook"
-            btnType="facebook"
-            color="#4867aa"
-            backgroundColor="#e6eaf4"
-            onPress={() => { }}
-          />
+        {Platform.OS == 'android' ? (
+          <View>
 
-          <SocialButton
-            buttonTitle="Sign In with Google"
-            btnType="google"
-            color="#de4d41"
-            backgroundColor="#f5e7ea"
-            onPress={() => { }}
-          />
-        </View>
-      ) : null
-      }
+            <SocialButton
+              buttonTitle="Sign In with Facebook"
+              btnType="facebook"
+              color="#4867aa"
+              backgroundColor="#e6eaf4"
+              onPress={() => { }}
+            />
 
-      <TouchableOpacity style={styles.forgotButton} onPress={() => navigation.navigate('Signup')}>
-        <Text style={styles.navButton}>Don't have an account? Create here</Text>
-      </TouchableOpacity>
-    </View>
+            <SocialButton
+              buttonTitle="Sign In with Google"
+              btnType="google"
+              color="#de4d41"
+              backgroundColor="#f5e7ea"
+              onPress={() => { }}
+            />
+          </View>
+        ) : null
+        }
+
+        <TouchableOpacity style={styles.forgotButton} onPress={() => navigation.navigate('Signup')}>
+          <Text style={styles.navButton}>Don't have an account? Create here</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
 
   );
 };
@@ -94,7 +108,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   text: {
-    fontFamily: 'Kufam-SemiBoldItalic',
+    // fontFamily: 'Kufam-SemiBoldItalic',
     fontSize: 28,
     marginBottom: 10,
     color: '#051d5f',
@@ -109,6 +123,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     color: '#2e64e5',
-    fontFamily: 'Lato-Regular',
+    // fontFamily: 'Lato-Regular',
   },
 });

@@ -14,20 +14,36 @@
     ]
   },
   "dependencies": {
+    "@eva-design/eva": "^2.1.1",
     "@react-native-async-storage/async-storage": "^1.17.11",
+    "@react-native-community/netinfo": "^9.3.7",
+    "@react-native-picker/picker": "^2.4.8",
+    "@react-navigation/bottom-tabs": "^6.5.3",
+    "@react-navigation/drawer": "^6.5.7",
     "@react-navigation/stack": "^6.3.7",
-    "axios": "^1.2.1",
+    "@ui-kitten/components": "^5.1.2",
+    "amazon-cognito-identity-js": "^6.1.2",
+    "aws-amplify": "^5.0.12",
+    "axios": "^1.2.2",
     "expo": "~47.0.8",
+    "expo-cli": "^6.1.0",
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
+    "expo-web-browser": "^12.0.0",
     "newsapi": "^2.4.1",
     "react": "18.1.0",
+    "react-moment": "^1.1.2",
     "react-native": "0.70.5",
     "react-native-app-auth": "^6.4.3",
+    "react-native-event-listeners": "^1.0.7",
     "react-native-gesture-handler": "^2.8.0",
     "react-native-onboarding-swiper": "^1.2.0",
     "react-native-paper": "^5.0.2",
-    "react-native-vector-icons": "^9.2.0"
+    "react-native-really-awesome-button": "^2.0.4",
+    "react-native-reanimated": "^2.14.1",
+    "react-native-svg": "^13.7.0",
+    "react-native-vector-icons": "^9.2.0",
+    "react-native-webview": "^11.26.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
